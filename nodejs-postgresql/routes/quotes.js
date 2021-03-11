@@ -1,9 +1,19 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET users listing. */
+/* GET quotes listing. */
+
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.json({
+    data: [
+      {
+        quote: 'First, solve the problem. Then, write the code.',
+        author: 'John Johnson'
+      }
+    ],
+    meta: {
+      page: 1
+    }
+  });
 });
-
 module.exports = router;
